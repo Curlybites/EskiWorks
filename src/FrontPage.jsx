@@ -26,7 +26,7 @@ export default function FrontPage() {
     // Apply theme to the html element
     const htmlElement = document.querySelector("html");
     htmlElement.setAttribute("data-theme", theme);
-    
+
     // Update the key to force background image reload on theme change
     setBgImageKey(Date.now());
   }, [theme]);
@@ -36,7 +36,9 @@ export default function FrontPage() {
       <Navbar />
       {/* Background Image */}
       <div
-        className={`bg-cover bg-center saturate-200 bg-no-repeat md:h-screen absolute inset-0 z-20 filter contrast-125 ${theme === "dim" ? "grayscale" : ""}`}
+        className={`bg-cover bg-center saturate-200 bg-no-repeat md:h-screen absolute inset-0 z-20 filter contrast-125 ${
+          theme === "dim" ? "grayscale" : ""
+        }`}
         style={{
           backgroundImage: `url(${primaryImage}?key=${bgImageKey})`, // Add key to force reload
           backgroundSize: "contain", // Pumili ng 'cover' para sa pangkalahatang pagtutugma
